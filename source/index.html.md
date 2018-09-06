@@ -1048,3 +1048,109 @@ This API call update configuration's device states
 ### HTTP Request
 
 `PUT https://procam.arcelikiot.com/api/functional-configuration/device-substates`
+
+
+## Update Program Options
+
+> The example body JSON structured like this:
+
+```json
+{
+  "functionalConfigurationId": 13,
+  "disabledOptions":[
+    {
+      "programKey": "PROGRAM_COTTONS_ECO",
+      "options":[
+        "WASHER_PHR",
+        "WASHER_FAST_PLUS",
+        "WASHER_HIDDEN_ANTI_CREASE"
+      ]
+    },
+    {
+      "programKey": "PROGRAM_SYNTHETICS",
+      "options":[
+        "WASHER_PHR"
+      ]
+    }
+  ],
+  "optionOverrides":[
+    {
+      "programKey": "PROGRAM_SYNTHETICS",
+      "overrides":[
+        {
+          "subprogramKeyRef": "WASHER_TEMPERATURE",
+          "allowedValueIndices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "subprogramKeyRef": "WASHER_SPIN",
+          "allowedValueIndices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+> The above body returns JSON structured like this:
+
+```json
+{
+  "success": true,
+  "code": "200",
+  "description": "Succesfully updated configuration's program options",
+  "data": null
+}
+```
+
+This API call update configuration's program options
+
+<!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
+
+### HTTP Request
+
+`PUT https://procam.arcelikiot.com/api/functional-configuration/program-options`
+
+## Update Download Cycle
+
+> The example body JSON structured like this:
+
+```json
+{
+  "functionalConfigurationId": 13,
+  "index":71
+}
+```
+
+> The above body returns JSON structured like this:
+
+```json
+{
+  "success": true,
+  "code": "200",
+  "description": "Succesfully updated configuration's download cycle",
+  "data": null
+}
+```
+
+This API call update configuration's download cycle
+
+<!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
+
+### HTTP Request
+
+`PUT https://procam.arcelikiot.com/api/functional-configuration/download-cycle`
