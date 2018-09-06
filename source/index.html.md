@@ -25,17 +25,6 @@ ProCAM Supplier API Provides web-based programming interfaces that can be integr
 
 # Authentication
 
-> To authorize, use this code:
-
-```json
-require 'ProCAMSupplierAPI'
-
-api = ProCAMSupplierAPI::APIClient.authorize!('meowmeowmeow')
-```
-
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
 ProCAM Supplier API uses API keys to allow access to the API. You can register a new ProCAM Supplier API API key at our [developer portal](http://example.com/developers).
 
 ProCAM Supplier API expects for the API key to be included in all API requests to the server in a header that looks like the following:
