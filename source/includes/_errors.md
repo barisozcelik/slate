@@ -7,14 +7,16 @@ The Kittn API uses the following error codes:
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request sucks.
-401 | Unauthorized -- Your API key is wrong.
-403 | Forbidden -- The kitten requested is hidden for administrators only.
-404 | Not Found -- The specified kitten could not be found.
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method.
-406 | Not Acceptable -- You requested a format that isn't json.
-410 | Gone -- The kitten requested has been removed from our servers.
-418 | I'm a teapot.
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+5001 | Empty Fields.
+5002 | Username or password is wrong
+5003 | No such algorithm
+5004 | Invalid Key spec
+5005 | DAO Exception
+5006 | DAO Exception.
+5008 | Confirmation token not match
+5009 | Email unverified
+5015 | Cognito Exception
+5017 | Parameter invalid
+5021 | Token Expired
+5023 | Permission Denied
+5041 | SNS Exception
