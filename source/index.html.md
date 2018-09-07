@@ -77,12 +77,10 @@ Remember — You should be authenticated first!
 > The example body JSON structured like this:
 
 ```json
-[
-  {
-    "applianceType": "Washer",
-    "programStrKey": "WASHER_PROGRAM_ECO_50"
-  }
-]
+{
+  "applianceType": "Washer",
+  "programStrKey": "WASHER_PROGRAM_ECO_50"
+}
 
 ```
 
@@ -148,12 +146,10 @@ Remember — You should be authenticated first!
 > The example body JSON structured like this:
 
 ```json
-[
-  {
-    "applianceType": "Washer",
-    "subprogramStrKey": "WASHER_LIQUID_DETERGENT"
-  }
-]
+{
+  "applianceType": "Washer",
+  "subprogramStrKey": "WASHER_LIQUID_DETERGENT"
+}
 
 ```
 
@@ -228,17 +224,15 @@ Remember — You should be authenticated first!
 > The example body JSON structured like this:
 
 ```json
-[
-  {
-    "applianceType": "Washer",
-    "warningStrKey": "WASHER_WARNING_DOOR_IS_OPEN",
-    "notificationInfo": {
-      "strKey": "WASHER_WARNING_DOOR_IS_OPEN_NOTIFICATION",
-      "priority": "HIGH",
-      "necessity": "OPTON"
-    }
+{
+  "applianceType": "Washer",
+  "warningStrKey": "WASHER_WARNING_DOOR_IS_OPEN",
+  "notificationInfo": {
+    "strKey": "WASHER_WARNING_DOOR_IS_OPEN_NOTIFICATION",
+    "priority": "HIGH",
+    "necessity": "OPTON"
   }
-]
+}
 
 ```
 
