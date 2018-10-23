@@ -57,7 +57,7 @@ This endpoint returns a list of all homewhiz appliances which are paired with th
 
 `GET https://cooking.homewhiz.com/api/homewhizappliances`
 
-<aside class="success">
+<aside class="warning">
 Remember — You should be authenticated first!
 </aside>
 
@@ -79,7 +79,7 @@ Returns a specific homewhiz appliance which is paired with the logged-in user ac
 
 `GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}`
 
-<aside class="success">
+<aside class="warning">
 Remember — You should be authenticated first!
 </aside>
 
@@ -173,7 +173,7 @@ Returns appliance function and function's options list.
 
 `GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/meta/availablefunctions`
 
-<aside class="success">
+<aside class="warning">
 Remember — You should be authenticated first!
 </aside>
 
@@ -230,7 +230,7 @@ Returns function values which is currently executed.
 
 `GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions`
 
-<aside class="success">
+<aside class="warning">
 Remember — You should be authenticated first!
 </aside>
 
@@ -251,7 +251,7 @@ Returns specific function value which is currently executed.
 
 `GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/{func}`
 
-<aside class="success">
+<aside class="warning">
 Remember — You should be authenticated first!
 </aside>
 
@@ -271,6 +271,9 @@ Returns step info of recipe which is currently executed.
 
 `GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/recipe`
 
+<aside class="warning">
+Remember — You should be authenticated first!
+</aside>
 
 # Sending Information
 
@@ -322,6 +325,10 @@ This endpoint sets multiple functions.
 
 `PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions`
 
+<aside class="warning">
+Remember — You should be authenticated first!
+</aside>
+
 ## Set Specific Appliance Function
 
 > The example body JSON structured like this:
@@ -331,8 +338,6 @@ This endpoint sets multiple functions.
   "func": "OPT_TEMPERATURE",
   "val": "50"
 }
-
-
 ```
 
 > The above body returns JSON structured like this:
@@ -353,6 +358,10 @@ This endpoint sets specific function.
 ### HTTP Request
 
 `PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/{func}`
+
+<aside class="warning">
+Remember — You should be authenticated first!
+</aside>
 
 ## Set Recipe
 
@@ -426,6 +435,10 @@ This endpoint sets recipe.
 
 `PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/recipe`
 
+<aside class="warning">
+Remember — You should be authenticated first!
+</aside>
+
 # Config
 ## Add Webhook Config
 
@@ -443,6 +456,8 @@ This endpoint sets webhook url to observe events during Innit session.
 
 `PUT https://cooking.homewhiz.com/api/sys-config/event-webhook-endpoint`
 
-
+<aside class="warning">
+Remember — You should be authenticated first!
+</aside>
 
 
