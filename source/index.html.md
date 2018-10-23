@@ -119,7 +119,7 @@ Remember — You should be authenticated first!
       "func": "STT_COOKING_PHASE",
       "enums": [
         "NONE",
-        "PREHEATING_PRECOOLING",
+        "PREHEATING",
         "COOKING",
         "PAUSED",
         "CANCELLING",
@@ -149,7 +149,7 @@ Remember — You should be authenticated first!
       "valueType": "Enum"
     },
     {
-      "func": "STT_ELAPSE_DURATION",
+      "func": "STT_ELAPSED_DURATION",
       "valueType": "HoursMinutes"
     },
     {
@@ -191,7 +191,7 @@ Remember — You should be authenticated first!
     },
     {
       "func": "STT_COOKING_PHASE",
-      "val": "PREHEATING_PRECOOLING"
+      "val": "PREHEATING"
     },
     {
       "func": "OPT_TEMPERATURE",
@@ -202,7 +202,7 @@ Remember — You should be authenticated first!
       "val": "MEDIUM"
     },
     {
-      "func": "STT_ELAPSE_DURATION",
+      "func": "STT_ELAPSED_DURATION",
       "val": "00.40"
     },
     {
@@ -244,6 +244,23 @@ Returns specific function value which is currently executed.
 <aside class="success">
 Remember — You should be authenticated first!
 </aside>
+
+## Get Recipe Information
+
+> returns JSON structured like this:
+
+```json
+{
+  "step": 2
+}
+```
+
+Returns step info of recipe which is currently executed.
+
+### HTTP Request
+
+`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/recipe`
+
 
 # Sending Information
 
@@ -327,4 +344,94 @@ This endpoint sets specific function.
 ### HTTP Request
 
 `PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/{func}`
+
+## Set Recipe
+
+> The example body JSON structured like this:
+
+```json
+{
+  "preheat": true,
+  "steps": [
+    {
+      "functions": [
+        {
+          "key": "PRG_CONVECTION"
+        },
+        {
+          "key": "OPT_TEMPERATURE",
+          "value": "300"
+        },
+        {
+          "key": "OPT_FLUE_LEVEL",
+          "value": "HALF"
+        },
+        {
+          "key": "OPT_SHOCK_STEAM",
+          "delay": "6"
+        }
+      ],
+      "finishing": {
+        "type": "time",
+        "params": {
+          "duration": 20
+        }
+      }
+    },
+    {
+      "functions": [
+        {
+          "key": "PRG_CONVECTION"
+        },
+        {
+          "key": "OPT_TEMPERATURE",
+          "value": "200"
+        }
+      ],
+      "finishing": {
+        "type": "meatprobe",
+        "params": {
+          "targetTemperature": 65,
+          "alternateDuration": 30
+        }
+      }
+    }
+  ]
+}
+```
+
+> The above body returns JSON structured like this:
+
+```json
+{
+  "success": true,
+  "code": "200",
+  "description": "Succesfully sent recipe",
+  "data": null
+}
+```
+
+This endpoint sets recipe.
+
+### HTTP Request
+
+`PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/recipe`
+
+# Config
+
+## Add Webhook Config
+
+> Request Body:
+
+```json
+{
+  "url": "www.example-webhook-url.com"
+}
+```
+### HTTP Request
+
+`PUT https://cooking.homewhiz.com/api/sys-config/event-webhook-endpoint`
+
+
+
 
