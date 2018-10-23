@@ -220,7 +220,6 @@ Remember — You should be authenticated first!
       "func": "OPT_REQUESTED_DURATION",
       "val": "01.20"
     }
-    
   ]
 }
 ```
@@ -428,7 +427,6 @@ This endpoint sets recipe.
 `PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/recipe`
 
 # Config
-
 ## Add Webhook Config
 
 > Request Body:
@@ -438,6 +436,9 @@ This endpoint sets recipe.
   "url": "www.example-webhook-url.com"
 }
 ```
+
+This endpoint sets webhook url to observe events during Innit session.
+
 ### HTTP Request
 
 `PUT https://cooking.homewhiz.com/api/sys-config/event-webhook-endpoint`
