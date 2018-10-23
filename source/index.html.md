@@ -93,7 +93,7 @@ Remember — You should be authenticated first!
   "functions": [
     {
       "func": "REMOTE_CONTROL",
-      "enums": [
+      "vals": [
         "OFF",
         "ON"
       ],
@@ -101,7 +101,7 @@ Remember — You should be authenticated first!
     },
     {
       "func": "ATR_POWER_STATUS",
-      "enums": [
+      "vals": [
         "OFF",
         "ON"
       ],
@@ -109,7 +109,7 @@ Remember — You should be authenticated first!
     },
     {
       "func": "STT_OPERATION_MODE",
-      "enums": [
+      "vals": [
         "IDLE",
         "COOKING"
       ],
@@ -117,7 +117,7 @@ Remember — You should be authenticated first!
     },
     {
       "func": "STT_COOKING_PHASE",
-      "enums": [
+      "vals": [
         "NONE",
         "PREHEATING",
         "COOKING",
@@ -137,10 +137,17 @@ Remember — You should be authenticated first!
       "lowerLimit": 40,
       "upperLimit": 320,
       "step": 5
-    }
+    },
+    {
+      "func": "STT_CAVITY_CURRENT_TEMPERATURE",
+      "valueType": "DegreeCelsius",
+      "lowerLimit": 40,
+      "upperLimit": 99,
+      "step": 1
+    },
     {
       "func": "OPT_FAN_LEVEL",
-      "enums": [
+      "vals": [
         "OFF",
         "LOW",
         "MEDIUM",
@@ -196,6 +203,10 @@ Remember — You should be authenticated first!
     {
       "func": "OPT_TEMPERATURE",
       "val": "60"
+    },
+    {
+      "func": "STT_CAVITY_CURRENT_TEMPERATURE",
+      "val": "25"
     },
     {
       "func": "OPT_FAN_LEVEL",
@@ -271,7 +282,6 @@ Returns step info of recipe which is currently executed.
 ```json
 {
   "functions": [
-    ,
     {
       "func": "OPT_TEMPERATURE",
       "val": "40"
