@@ -21,7 +21,7 @@ Welcome to the Homewhiz Cooking API!
 
 HomeWhiz is a IoT platform for Arcelik Group's smart home technology. 
 
-Homewhiz Cooking API Provides web-based programming interfaces that can be integrated into systems, allowing you to control and monitor users' cooking devices.
+Homewhiz Cooking API provides web-based programming interfaces that can be consumed by external systems, allowing you to control and monitor users' cooking devices.
 
 # Authentication
 
@@ -92,23 +92,23 @@ Remember — You should be authenticated first!
 {
   "functions": [
     {
-      "funcKey": "REMOTE_CONTROL",
+      "func": "REMOTE_CONTROL",
       "enums": [
         "OFF",
         "ON"
       ],
-      "valueType": "Boolean"
+      "valueType": "Enum"
     },
     {
-      "funcKey": "ATR_POWER_STATUS",
+      "func": "ATR_POWER_STATUS",
       "enums": [
         "OFF",
         "ON"
       ],
-      "valueType": "OffOn"
+      "valueType": "Enum"
     },
     {
-      "funcKey": "STT_OPERATION_MODE",
+      "func": "STT_OPERATION_MODE",
       "enums": [
         "IDLE",
         "COOKING"
@@ -116,8 +116,9 @@ Remember — You should be authenticated first!
       "valueType": "Enum"
     },
     {
-      "funcKey": "STT_COOKING_PHASE",
+      "func": "STT_COOKING_PHASE",
       "enums": [
+        "NONE",
         "PREHEATING_PRECOOLING",
         "COOKING",
         "PAUSED",
@@ -128,23 +129,31 @@ Remember — You should be authenticated first!
         "PREPARING_STEAM",
         "SPRAYING_STEAM"
       ],
-      "valueType": "Enum_NoneVals"
+      "valueType": "Enum"
     },
     {
-      "funcKey": "OPT_FAN_LEVEL",
+      "func": "OPT_TEMPERATURE",
+      "valueType": "DegreeCelsius",
+      "lowerLimit": 40,
+      "upperLimit": 320,
+      "step": 5
+    }
+    {
+      "func": "OPT_FAN_LEVEL",
       "enums": [
+        "OFF",
         "LOW",
         "MEDIUM",
         "HIGH"
       ],
-      "valueType": "Enum_OffVals"
+      "valueType": "Enum"
     },
     {
-      "funcKey": "STT_ELAPSE_DURATION",
+      "func": "STT_ELAPSE_DURATION",
       "valueType": "HoursMinutes"
     },
     {
-      "funcKey": "OPT_REQUESTED_DURATION",
+      "func": "OPT_REQUESTED_DURATION",
       "valueType": "HoursMinutes"
     }
   ]
@@ -155,7 +164,7 @@ Returns appliance function and function's options list.
 
 ### HTTP Request
 
-`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions`
+`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/meta/availablefunctions`
 
 <aside class="success">
 Remember — You should be authenticated first!
@@ -169,36 +178,36 @@ Remember — You should be authenticated first!
 {
   "functions": [
     {
-      "funcKey": "REMOTE_CONTROL",
-      "activeEnum": "ON"
+      "func": "REMOTE_CONTROL",
+      "val": "ON"
     },
     {
-      "funcKey": "ATR_POWER_STATUS",
-      "activeEnum": "ON"
+      "func": "ATR_POWER_STATUS",
+      "val": "ON"
     },
     {
-      "funcKey": "STT_OPERATION_MODE",
-      "activeEnum": "COOKING"
+      "func": "STT_OPERATION_MODE",
+      "val": "COOKING"
     },
     {
-      "funcKey": "STT_COOKING_PHASE",
-      "activeEnum": "PREHEATING_PRECOOLING"
+      "func": "STT_COOKING_PHASE",
+      "val": "PREHEATING_PRECOOLING"
     },
     {
-      "funcKey": "OPT_TEMPERATURE",
-      "activeEnum": "60"
+      "func": "OPT_TEMPERATURE",
+      "val": "60"
     },
     {
-      "funcKey": "OPT_FAN_LEVEL",
-      "activeEnum": "MEDIUM"
+      "func": "OPT_FAN_LEVEL",
+      "val": "MEDIUM"
     },
     {
-      "funcKey": "STT_ELAPSE_DURATION",
-      "activeEnums": ["0","40"]
+      "func": "STT_ELAPSE_DURATION",
+      "val": "00.40"
     },
     {
-      "funcKey": "OPT_REQUESTED_DURATION",
-      "activeEnum": ["1","20"]
+      "func": "OPT_REQUESTED_DURATION",
+      "val": "01.20"
     }
     
   ]
@@ -209,7 +218,7 @@ Returns function values which is currently executed.
 
 ### HTTP Request
 
-`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/active`
+`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions`
 
 <aside class="success">
 Remember — You should be authenticated first!
@@ -221,8 +230,8 @@ Remember — You should be authenticated first!
 
 ```json
 {
-  "funcKey": "OPT_TEMPERATURE",
-  "activeEnum": "60"
+  "func": "OPT_TEMPERATURE",
+  "val": "60"
 }
 ```
 
@@ -230,7 +239,7 @@ Returns specific function value which is currently executed.
 
 ### HTTP Request
 
-`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/active/{funcKey}`
+`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/{func}`
 
 <aside class="success">
 Remember — You should be authenticated first!
@@ -247,20 +256,20 @@ Remember — You should be authenticated first!
   "functions": [
     ,
     {
-      "funcKey": "OPT_TEMPERATURE",
-      "activeEnum": "40"
+      "func": "OPT_TEMPERATURE",
+      "val": "40"
     },
     {
-      "funcKey": "OPT_FAN_LEVEL",
-      "activeEnum": "LOW"
+      "func": "OPT_FAN_LEVEL",
+      "val": "LOW"
     },
     {
-      "funcKey": "OPT_REQUESTED_DURATION",
-      "activeEnums": ["2","10"]
+      "func": "OPT_REQUESTED_DURATION",
+      "val": "02.10"
     },
     {
-      "funcKey": "CMD_CHANGE_OPERATIONAL_STATUS",
-      "activeEnum": "COOK"
+      "func": "CMD_CHANGE_OPERATIONAL_STATUS",
+      "val": "COOK"
     }
   ]
 }
@@ -285,7 +294,7 @@ This endpoint sets multiple functions.
 
 ### HTTP Request
 
-`POST https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/active`
+`PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions`
 
 ## Set Specific Appliance Function
 
@@ -293,8 +302,8 @@ This endpoint sets multiple functions.
 
 ```json
 {
-  "funcKey": "OPT_TEMPERATURE",
-  "activeEnum": "50"
+  "func": "OPT_TEMPERATURE",
+  "val": "50"
 }
 
 
@@ -317,5 +326,5 @@ This endpoint sets specific function.
 
 ### HTTP Request
 
-`POST https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/active/{funcKey}`
+`PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/{func}`
 
