@@ -460,7 +460,7 @@ This endpoint sets webhook url to observe events during Innit session.
 Remember — You should be authenticated first!
 </aside>
 
-## DELETE Webhook Subscription
+## Delete Webhook Subscription
 
 This endpoint deletes webhook url to observe events during Innit session.
 
