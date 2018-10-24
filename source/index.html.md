@@ -374,7 +374,7 @@ Remember — You should be authenticated first!
     {
       "functions": [
         {
-          "key": "PRG_CONVECTION"
+          "key": "PRG_COOKING"
         },
         {
           "key": "OPT_TEMPERATURE",
@@ -386,7 +386,7 @@ Remember — You should be authenticated first!
         },
         {
           "key": "OPT_SHOCK_STEAM",
-          "delay": "6"
+          "delay": "ON"
         }
       ],
       "finishing": {
@@ -439,8 +439,8 @@ This endpoint sets recipe.
 Remember — You should be authenticated first!
 </aside>
 
-# Config
-## Add Webhook Config
+# Subscription
+## Add Webhook Subscription
 
 > Request Body:
 
@@ -454,10 +454,20 @@ This endpoint sets webhook url to observe events during Innit session.
 
 ### HTTP Request
 
-`PUT https://cooking.homewhiz.com/api/sys-config/event-webhook-endpoint`
+`PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/event/subscription`
 
 <aside class="warning">
 Remember — You should be authenticated first!
 </aside>
 
+## DELETE Webhook Subscription
 
+This endpoint deletes webhook url to observe events during Innit session.
+
+### HTTP Request
+
+`Delete https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/event/subscription`
+
+<aside class="warning">
+Remember — You should be authenticated first!
+</aside>
