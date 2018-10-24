@@ -399,7 +399,7 @@ Remember — You should be authenticated first!
     {
       "functions": [
         {
-          "key": "PRG_CONVECTION"
+          "key": "PRG_COOKING"
         },
         {
           "key": "OPT_TEMPERATURE",
