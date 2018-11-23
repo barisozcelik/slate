@@ -14,10 +14,11 @@ includes:
 
 search: true
 ---
+# Homewhiz Cooking API
 
 # Introduction
 
-Welcome to the Homewhiz Cooking API! 
+Welcome to the **Homewhiz Cooking API!** 
 
 HomeWhiz is a IoT platform for Arcelik Group's smart home technology. 
 
@@ -55,7 +56,7 @@ This endpoint returns a list of all homewhiz appliances which are paired with th
 
 ### HTTP Request
 
-`GET https://cooking.homewhiz.com/api/homewhizappliances`
+`GET https://cookingapi.homewhiz.com/api/homewhizappliances`
 
 <aside class="warning">
 Remember — You should be authenticated first!
@@ -77,7 +78,7 @@ Returns a specific homewhiz appliance which is paired with the logged-in user ac
 
 ### HTTP Request
 
-`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}`
+`GET https://cookingapi.homewhiz.com/api/homewhizappliances/{hwid}`
 
 <aside class="warning">
 Remember — You should be authenticated first!
@@ -170,7 +171,7 @@ Returns appliance function and function's options list.
 
 ### HTTP Request
 
-`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/meta/availablefunctions`
+`GET https://cookingapi.homewhiz.com/api/homewhizappliances/{hwid}/meta/availablefunctions`
 
 <aside class="warning">
 Remember — You should be authenticated first!
@@ -227,7 +228,7 @@ Returns function values which is currently executed.
 
 ### HTTP Request
 
-`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions`
+`GET https://cookingapi.homewhiz.com/api/homewhizappliances/{hwid}/functions`
 
 <aside class="warning">
 Remember — You should be authenticated first!
@@ -248,7 +249,7 @@ Returns specific function value which is currently executed.
 
 ### HTTP Request
 
-`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/{func}`
+`GET https://cookingapi.homewhiz.com/api/homewhizappliances/{hwid}/functions/{func}`
 
 <aside class="warning">
 Remember — You should be authenticated first!
@@ -302,7 +303,7 @@ This endpoint sets multiple functions.
 
 ### HTTP Request
 
-`PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions`
+`PUT https://cookingapi.homewhiz.com/api/homewhizappliances/{hwid}/functions`
 
 <aside class="warning">
 Remember — You should be authenticated first!
@@ -336,7 +337,7 @@ This endpoint sets specific function.
 
 ### HTTP Request
 
-`PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/functions/{func}`
+`PUT https://cookingapi.homewhiz.com/api/homewhizappliances/{hwid}/functions/{func}`
 
 <aside class="warning">
 Remember — You should be authenticated first!
@@ -358,7 +359,7 @@ This endpoint sets webhook url to observe events during Innit session.
 
 ### HTTP Request
 
-`PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/event/subscription`
+`PUT https://cookingapi.homewhiz.com/api/homewhizappliances/{hwid}/event/subscription`
 
 <aside class="warning">
 Remember — You should be authenticated first!
@@ -370,7 +371,7 @@ This endpoint deletes webhook url to observe events during Innit session.
 
 ### HTTP Request
 
-`Delete https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/event/subscription`
+`Delete https://cookingapi.homewhiz.com/api/homewhizappliances/{hwid}/event/subscription`
 
 <aside class="warning">
 Remember — You should be authenticated first!
