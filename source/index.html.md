@@ -376,3 +376,17 @@ This endpoint deletes webhook url to observe events during Innit session.
 <aside class="warning">
 Remember — You should be authenticated first!
 </aside>
+
+# Value Types
+
+*	Boolean
+*	Enum
+*	Enum_OffVals
+*	Enum_NoneVals
+*	OffOn
+*	HoursMinutes
+*	DegreeCelcius
+*	Percent
+*	Percent_OffVals
+*	Integer
+*	Integer_NoneVals
