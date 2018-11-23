@@ -255,26 +255,6 @@ Returns specific function value which is currently executed.
 Remember — You should be authenticated first!
 </aside>
 
-## Get Recipe Information
-
-> returns JSON structured like this:
-
-```json
-{
-  "step": 2
-}
-```
-
-Returns step info of recipe which is currently executed.
-
-### HTTP Request
-
-`GET https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/recipe`
-
-<aside class="warning">
-Remember — You should be authenticated first!
-</aside>
-
 # Sending Information
 
 ## Set Appliance Functions
@@ -363,81 +343,6 @@ This endpoint sets specific function.
 Remember — You should be authenticated first!
 </aside>
 
-## Set Recipe
-
-> The example body JSON structured like this:
-
-```json
-{
-  "preheat": true,
-  "steps": [
-    {
-      "functions": [
-        {
-          "key": "PRG_COOKING"
-        },
-        {
-          "key": "OPT_TEMPERATURE",
-          "value": "300"
-        },
-        {
-          "key": "OPT_FLUE_LEVEL",
-          "value": "HALF"
-        },
-        {
-          "key": "OPT_SHOCK_STEAM",
-          "delay": "ON"
-        }
-      ],
-      "finishing": {
-        "type": "time",
-        "params": {
-          "duration": 20
-        }
-      }
-    },
-    {
-      "functions": [
-        {
-          "key": "PRG_COOKING"
-        },
-        {
-          "key": "OPT_TEMPERATURE",
-          "value": "200"
-        }
-      ],
-      "finishing": {
-        "type": "meatprobe",
-        "params": {
-          "targetTemperature": 65,
-          "alternateDuration": 30
-        }
-      }
-    }
-  ]
-}
-```
-
-> The above body returns JSON structured like this:
-
-```json
-{
-  "success": true,
-  "code": "200",
-  "description": "Succesfully sent recipe",
-  "data": null
-}
-```
-
-This endpoint sets recipe.
-
-### HTTP Request
-
-`PUT https://cooking.homewhiz.com/api/homewhizappliances/{hwid}/recipe`
-
-<aside class="warning">
-Remember — You should be authenticated first!
-</aside>
 
 # Subscription
 ## Add Webhook Subscription
