@@ -125,7 +125,6 @@ Remember — You should be authenticated first!
         "CANCELLING",
         "CANCELLED",
         "FINISHED",
-        "COOKING_MORE",
         "PREPARING_STEAM",
         "SPRAYING_STEAM"
       ],
