@@ -377,7 +377,7 @@ This endpoint deletes webhook url to observe events during Innit session.
 Remember — You should be authenticated first!
 </aside>
 
-# Value Types
+# Function Value Types
 
 *	Boolean
 *	Enum
