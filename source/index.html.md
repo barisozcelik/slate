@@ -344,7 +344,7 @@ Remember — You should be authenticated first!
 </aside>
 
 
-# Subscription
+# Event Subscription
 ## Add Webhook Subscription
 
 > Request Body:
